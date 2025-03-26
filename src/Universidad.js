@@ -10,7 +10,7 @@ import RoomIcon from '@mui/icons-material/Room';
 import Footer from './Footer';
 
 const teamMembers = [
-  { name: 'Full Name a', title: 'Job Title', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.' },
+  { name: 'Full Name adrian', title: 'Job Title', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.' },
   { name: 'Full Name jhojan', title: 'Job Title', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.' },
   { name: 'Full Name ivan', title: 'Job Title', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.' },
 ];
