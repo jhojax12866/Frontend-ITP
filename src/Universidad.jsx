@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { Container, Box, Typography, Grid, Card, CardContent, Avatar, IconButton, Link } from '@mui/material';
+import { Container, Box, Typography, Grid, Card, CardContent, Avatar, IconButton } from '@mui/material';
 import NavBar from './NavBar';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import XIcon from '@mui/icons-material/X';
 import LanguageIcon from '@mui/icons-material/Language';
-import RoomIcon from '@mui/icons-material/Room';
 import Footer from './Footer';
+import Mapa from './mapa';
 
 const teamMembers = [
   { name: 'Full Name adrian', title: 'Job Title', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.' },
@@ -15,23 +15,7 @@ const teamMembers = [
   { name: 'Full Name ivan', title: 'Job Title', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.' },
 ];
 
-const locations = [
-  {
-    city: 'Sibundoy',
-    address: '123 Sample St, Sydney NSW 2000 AU',
-    mapLink: '#',
-  },
-  {
-    city: 'Mocoa',
-    address: '123 Sample St, New York NY 10000 USA',
-    mapLink: '#',
-  },
-  {
-    city: 'Villagarzón',
-    address: '123 Sample St, London W1C 1DE, United Kingdom',
-    mapLink: '#',
-  },
-];
+
 
 const UniversityPage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -208,69 +192,11 @@ const UniversityPage = () => {
         </IconButton>
       </Box>
     </Container>
-    <Container maxWidth="lg" sx={{ mt: 5 }}>
-  <Box sx={{ textAlign: 'center', mb: 6 }}>
-    <Typography variant="h6" color="textSecondary" sx={{ letterSpacing: 2 }}>
-      Tagline
-    </Typography>
-    <Typography variant="h3" fontWeight="bold" sx={{ mb: 2, color: 'primary.main' }}>
-      Locaciones Institucionales
-    </Typography>
-    <Typography variant="body1" color="textSecondary" sx={{ maxWidth: 600, mx: 'auto' }}>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula nisi nec erat tempus, nec ultricies mi fermentum.
-    </Typography>
-  </Box>
-
-  <Grid container spacing={4}>
-    {/* Columna con información de locaciones */}
-    <Grid item xs={12} md={6}>
-      {locations.map((location, index) => (
-        <Box key={index} sx={{ mb: 4, backgroundColor: 'background.paper', p: 3, borderRadius: 2, boxShadow: '0 2px 10px rgba(0,0,0,0.1)' }}>
-          <Typography variant="h5" fontWeight="bold" gutterBottom sx={{ color: 'primary.main' }}>
-            {location.city}
-          </Typography>
-          <Typography variant="body1" color="textSecondary">
-            {location.address}
-          </Typography>
-          <Link href={location.mapLink} underline="none" color="primary" sx={{ mt: 1, display: 'inline-block', fontWeight: 'medium' }}>
-            Ver en el mapa
-          </Link>
-        </Box>
-      ))}
-    </Grid>
-
-    {/* Columna con el mapa */}
-    <Grid item xs={12} md={6}>
-      <Card sx={{ height: '100%', boxShadow: '0 6px 24px rgba(0,0,0,0.1)', borderRadius: 3, position: 'relative', overflow: 'hidden' }}>
-        <CardContent sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: 0, height: '100%' }}>
-          <Box
-            component="img"
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Putumayo_in_Colombia_%28mainland%29.svg/250px-Putumayo_in_Colombia_%28mainland%29.svg.png"
-                alt="Map Placeholder"
-                sx={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-                filter: 'brightness(0.85)',
-                }}
-            />
-            <RoomIcon
-                sx={{
-                position: 'absolute',
-                fontSize: '4rem',
-                color: 'blue',
-                transform: 'translate(-50%, -50%)',
-                top: '50%',
-                left: '50%',
-                }}
-            />
-            </CardContent>
-        </Card>
-        </Grid>
-    </Grid>
-    </Container>
+    <Mapa/>
+    
     </center>
     <Footer />
+    
     </>
   );
 };
